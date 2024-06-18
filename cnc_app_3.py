@@ -29,14 +29,14 @@ ftes_logged_in = st.number_input(label="Choose the total number of FTEs logged i
 not_ready_con = not_ready/100
 
 sl_prediction_temp = prediction(calls_offered, aht, not_ready_con, ftes_logged_in)
-sl_prediction = sl_prediction_temp*100
+sl_prediction = round((sl_prediction_temp*100),1)
 
 st.header("Service Level Prediction")
 if sl_prediction <= 0:
-    st.subheader("0")
+    st.subheader("0%")
 elif sl_prediction >= 100:
-    st.subheader("100")
+    st.subheader("100%")
 else:
-    st.subheader(sl_prediction)
+    st.subheader(f"{sl_prediction}%")
 
 st.caption("Modeling used is eXtreme Gradient Boosting (XGBoost) and was trained on CNC call data Oct 3 2022 - Jun 14 2024 (as of Jun 17 2024)")
