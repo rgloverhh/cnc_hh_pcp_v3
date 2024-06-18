@@ -32,9 +32,7 @@ sl_prediction_temp = prediction(calls_offered, aht, not_ready_con, ftes_logged_i
 sl_prediction = round((sl_prediction_temp*100),1)
 
 st.header("Service Level Prediction")
-if sl_prediction == "":
-    st.subheader("Load predictors")
-elif sl_prediction <= 0:
+if sl_prediction <= 0:
     st.subheader("0%")
 elif sl_prediction >= 100:
     st.subheader("100%")
