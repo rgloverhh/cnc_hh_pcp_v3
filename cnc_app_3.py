@@ -23,9 +23,9 @@ st.text("Please fill in the responses below to predict primary care service leve
 st.text("Default values are daily average from May 2024")
 
 calls_offered = st.number_input(label="Enter a call volume between 500 and 3000", min_value=500, max_value=4000, step=10, value=1970)
-aht = st.number_input(label="Average Handle Time (in decimal format, i.e. 5.5 = 5min 30sec -> 0.1 = 6 sec)", min_value=4.0, max_value=7.0, step=0.05, value=5.5)
+aht = st.number_input(label="Average Handle Time (in decimal format, i.e. 5.5 = 5min 30sec -> 0.1 = 6 sec)", min_value=4.0, max_value=7.0, step=0.05, value=5.50)
 not_ready = st.number_input(label="Not Ready Rate (%)", min_value=15.0, max_value=35.0, step=0.1, value=22.7)
-ftes_logged_in = st.number_input(label="Choose the total number of FTEs logged in for the day (use PowerBI CNC Call Metrics Staffing as a guide)", min_value=20.0, max_value=40.0, step=0.5, value=25)
+ftes_logged_in = st.number_input(label="Choose the total number of FTEs logged in for the day (use PowerBI CNC Call Metrics Staffing as a guide)", min_value=20.0, max_value=40.0, step=0.5, value=25.0)
 
 not_ready_con = not_ready/100
 
